@@ -7,7 +7,7 @@
   <body>
 
     <div id="game">
-
+ 
     </div>
 
     <script type="text/javascript">
@@ -16,6 +16,11 @@
       var options = ["r", "p", "s"];
 
       // This function is run whenever the user presses a key.
+      
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+
       document.onkeyup = function(event) {
 
         // Determines which key was pressed
@@ -29,45 +34,52 @@
 
         console.log(computerGuess);
 
-        var wins = 0;
-        var losses = 0;
-        var ties = 0;
+        
 
         if (userGuess===computerGuess) {
           console.log("Tie");
-          ties=ties ++;
+          ties ++;
         }
 
 
         if ((userGuess===options[0]) && (computerGuess===options[1])) {
           console.log("Loss");
-          losses=losses++;
+          losses++;
         }
         if ((userGuess===options[0]) && (computerGuess===options[2])) {
           console.log("Win");
-          wins=wins++;
+          wins++;
         }
         if ((userGuess===options[1]) && (computerGuess===options[2])) {
           console.log("Loss");
-          losses=losses++;
+          losses++;
         }
         if ((userGuess===options[1]) && (computerGuess===options[0])) {
           console.log("Win");
-          wins=wins++;
+          wins++;
         }
         if ((userGuess===options[2]) && (computerGuess===options[1])) {
           console.log("Win");
-          wins=wins++;
+          wins++;
         }
         if ((userGuess===options[2]) && (computerGuess===options[0])) {
           console.log("Loss");
-          losses=losses++;
+          losses++;
         }
-        // // Alerts the Computer's guess.
-        // alert(computerGuess);
-        console.log("wins " + wins + " losses " + losses," ties " + ties);
-      };
+        var div = document.getElementById('game').innerHTML = "Wins: "  + wins + " Losses: " + losses;
+        
+        var div = document.getElementById('losses');
+        div.innerHTML = "losses" + losses;
+        var div = document.getElementById('ties');
+        div.innerHTML = "ties" + ties;
 
+
+        console.log("wins" + wins);
+        console.log("losses" + losses);
+        console.log("ties" + ties);// // Alerts the Computer's guess.
+        // alert(computerGuess);
+      };
+        
 
     </script>
 
