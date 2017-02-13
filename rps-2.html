@@ -27,7 +27,7 @@
         var userGuess = event.key;
 
         // Alerts the key the user pressed (userGuess).
-        alert(userGuess);
+        console.log(userGuess);
 
         // Randomly chooses a choice from the options array. This is the Computer's guess.
         var computerGuess = options[Math.floor(Math.random() * options.length)];
@@ -66,17 +66,15 @@
           console.log("Loss");
           losses++;
         }
-        var div = document.getElementById('game').innerHTML = "Wins: "  + wins + " Losses: " + losses;
+        var div = document.getElementById('game').innerHTML = "Wins: "  + wins + " Losses: " + losses + " Ties: " + ties;
         
-        var div = document.getElementById('losses');
-        div.innerHTML = "losses" + losses;
-        var div = document.getElementById('ties');
-        div.innerHTML = "ties" + ties;
-
+      
 
         console.log("wins" + wins);
         console.log("losses" + losses);
-        console.log("ties" + ties);// // Alerts the Computer's guess.
+        console.log("ties" + ties);
+
+        // // Alerts the Computer's guess.
         // alert(computerGuess);
       };
         
